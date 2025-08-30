@@ -95,13 +95,11 @@ window.addEventListener("keydown", (e) => {
         listNum--
         if (listNum < 0) listNum = 5
         playMusicByArray(listNum)
-        playBtn.className = "bi bi-pause-fill"
     }
     if (e.code == "ArrowRight") {
         listNum++
         if (listNum > musicList.length - 1) listNum = 0
         playMusicByArray(listNum)
-        playBtn.className = "bi bi-pause-fill"
     }
 
 
@@ -112,14 +110,12 @@ nextBtn.addEventListener("click", (e) => {
     listNum++
     if (listNum > musicList.length - 1) listNum = 0
     playMusicByArray(listNum)
-    playBtn.className = "bi bi-pause-fill"
 
 })
 previousBtn.addEventListener("click", (e) => {
     listNum--
     if (listNum < 0) listNum = 5
     playMusicByArray(listNum)
-    playBtn.className = "bi bi-pause-fill"
 
 })
 //////////////
@@ -223,4 +219,6 @@ function playMusicByArray(listNum) {
     audio.load()
     ///////////////////////////
     audio.play()
+    playBtn.className = "bi bi-pause-fill"
+
 }
