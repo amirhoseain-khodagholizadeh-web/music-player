@@ -136,7 +136,6 @@ playLine.addEventListener("click", (e) => {
     ///////////////////////
 
     playLineFull.style.width = resulrPersent + "%"
-    console.log(resulrPersent + "%");
 
 })
 
@@ -154,7 +153,6 @@ setInterval(() => {
         listNum++
         if (listNum > musicList.length - 1) listNum = 0;
         playMusicByArray(listNum)
-        console.log("golog");
 
 
     };
@@ -205,7 +203,6 @@ setInterval(() => {
             endTimeList[2].innerHTML = endResSec
         }
     }
-    console.log(endResSec);
 
     //////////////
 }, 1000)
