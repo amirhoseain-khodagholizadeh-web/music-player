@@ -55,7 +55,7 @@ const musicList = [{
         musicName: "Navak",
         singer: "Mohsen  chavoshi",
         MusicUrl: "assets/audio/Mohsen.Chavoshi - Arouse_Man_ft._Dj_Abed [128] (2).mp3",
-        imgUrl: "assets/img/لپلی-لیست-چاووشی-390x390-min.png",
+        imgUrl: "assets/img/پلی-لیست-چاووشی-390x390.png",
         bgColor: "rgb(221, 140, 59)"
     },
     {
@@ -224,6 +224,7 @@ function playMusicByArray(listNum) {
     ///////////////////////////
     audio.play()
 }
+
 
 
 
