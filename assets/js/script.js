@@ -66,22 +66,11 @@ const musicList = [{
     }
 
 ]
-playMusicByArray(listNum)
+window.addEventListener("load", () => {
+    playMusicByArray(listNum)
 
-////////play and pause button///
-playBtn.addEventListener("click", (e) => {
-    if (playBtn.className == "bi bi-pause-fill") {
-        audio.pause()
-        playBtn.className = "bi bi-play-fill"
-    } else {
-        audio.play()
-        playBtn.className = "bi bi-pause-fill"
-    }
-})
-////////
-//////keyboard logic////
-window.addEventListener("keydown", (e) => {
-    if (e.code == "Space") {
+    ////////play and pause button///
+    playBtn.addEventListener("click", (e) => {
         if (playBtn.className == "bi bi-pause-fill") {
             audio.pause()
             playBtn.className = "bi bi-play-fill"
@@ -89,137 +78,150 @@ window.addEventListener("keydown", (e) => {
             audio.play()
             playBtn.className = "bi bi-pause-fill"
         }
-    }
-    if (e.code == "ArrowLeft") {
-        listNum--
-        if (listNum < 0) listNum = 5
-        playMusicByArray(listNum)
-        playBtn.className = "bi bi-pause-fill"
-    }
-    if (e.code == "ArrowRight") {
+    })
+    ////////
+    //////keyboard logic////
+    window.addEventListener("keydown", (e) => {
+        if (e.code == "Space") {
+            if (playBtn.className == "bi bi-pause-fill") {
+                audio.pause()
+                playBtn.className = "bi bi-play-fill"
+            } else {
+                audio.play()
+                playBtn.className = "bi bi-pause-fill"
+            }
+        }
+        if (e.code == "ArrowLeft") {
+            listNum--
+            if (listNum < 0) listNum = 5
+            playMusicByArray(listNum)
+            playBtn.className = "bi bi-pause-fill"
+        }
+        if (e.code == "ArrowRight") {
+            listNum++
+            if (listNum > musicList.length - 1) listNum = 0
+            playMusicByArray(listNum)
+            playBtn.className = "bi bi-pause-fill"
+        }
+
+
+    })
+    /////////////////////////////
+    ///////next and privious  button
+    nextBtn.addEventListener("click", (e) => {
         listNum++
         if (listNum > musicList.length - 1) listNum = 0
         playMusicByArray(listNum)
         playBtn.className = "bi bi-pause-fill"
-    }
 
-
-})
-/////////////////////////////
-///////next and privious  button
-nextBtn.addEventListener("click", (e) => {
-    listNum++
-    if (listNum > musicList.length - 1) listNum = 0
-    playMusicByArray(listNum)
-    playBtn.className = "bi bi-pause-fill"
-
-})
-previousBtn.addEventListener("click", (e) => {
-    listNum--
-    if (listNum < 0) listNum = 5
-    playMusicByArray(listNum)
-    playBtn.className = "bi bi-pause-fill"
-
-})
-//////////////
-////////////////play line ///////////////
-
-
-playLine.addEventListener("click", (e) => {
-    let leftElement = playLine.getBoundingClientRect().left
-    let pxLeft = e.clientX - leftElement
-    let resulrPersent = (100 * pxLeft) / playLine.clientWidth
-    // let resulrPersentSec = 100 * 
-    playLineDot.style.left = resulrPersent + "%"
-    audio.currentTime = (resulrPersent * audio.duration) / 100
-    ///////////////////////
-
-    playLineFull.style.width = resulrPersent + "%"
-    console.log(resulrPersent + "%");
-
-})
-
-
-////////////////////
-/////////////playLineDot//////////////
-
-
-
-//////////////////
-/////////setInterval time////////
-let sec = 0
-setInterval(() => {
-    if (audio.currentTime >= audio.duration - 2) {
-        listNum++
-        if (listNum > musicList.length - 1) listNum = 0;
+    })
+    previousBtn.addEventListener("click", (e) => {
+        listNum--
+        if (listNum < 0) listNum = 5
         playMusicByArray(listNum)
-        console.log("golog");
+        playBtn.className = "bi bi-pause-fill"
 
-
-    };
-
-    let result = (100 * audio.currentTime) / audio.duration
-    playLineDot.style.left = result + "%"
-    playLineFull.style.width = result + "%"
-    let second = Math.floor(audio.currentTime)
-    let endSec = Math.floor(audio.duration)
-    let endResMin = Math.floor((endSec / 60) - ((second / 60)))
-    let endResSec = (endSec - second) % 60
-
-    ////start/////
-    if (String(Math.floor(second / 60)).length < 2) {
-        startTimeList[0].innerHTML = "0" + Math.floor(second / 60)
-    } else {
-        startTimeList[0].innerHTML = Math.floor(second / 60)
-    }
-
-    if (String(Math.floor(second % 60)).length < 2) {
-        startTimeList[2].innerHTML = "0" + Math.floor(second % 60)
-    } else {
-        startTimeList[2].innerHTML = Math.floor(second % 60)
-    }
-    //////
-    ///////end///////
-    if (isNaN(endResMin)) {
-        endResMin = 0
-    } else {
-        if (String(endResMin).length < 2) {
-            endTimeList[0].innerHTML = "0" + endResMin
-        } else {
-            endTimeList[0].innerHTML = endResMin
-        }
-    }
-
-
-    // if (endResSec == 60) {
-    //     endResSec = 0
-    // }
-    if (isNaN(endResSec)) {
-        endResSec = 0
-
-    } else {
-        if (String(endResSec).length < 2) {
-            endTimeList[2].innerHTML = "0" + endResSec
-        } else {
-            endTimeList[2].innerHTML = endResSec
-        }
-    }
-    console.log(endResSec);
-
+    })
     //////////////
-}, 1000)
+    ////////////////play line ///////////////
+
+
+    playLine.addEventListener("click", (e) => {
+        let leftElement = playLine.getBoundingClientRect().left
+        let pxLeft = e.clientX - leftElement
+        let resulrPersent = (100 * pxLeft) / playLine.clientWidth
+        // let resulrPersentSec = 100 * 
+        playLineDot.style.left = resulrPersent + "%"
+        audio.currentTime = (resulrPersent * audio.duration) / 100
+        ///////////////////////
+
+        playLineFull.style.width = resulrPersent + "%"
+        console.log(resulrPersent + "%");
+
+    })
+
+
+    ////////////////////
+    /////////////playLineDot//////////////
+
+
+
+    //////////////////
+    /////////setInterval time////////
+    let sec = 0
+    setInterval(() => {
+        if (audio.currentTime >= audio.duration - 2) {
+            listNum++
+            if (listNum > musicList.length - 1) listNum = 0;
+            playMusicByArray(listNum)
+            console.log("golog");
+
+
+        };
+
+        let result = (100 * audio.currentTime) / audio.duration
+        playLineDot.style.left = result + "%"
+        playLineFull.style.width = result + "%"
+        let second = Math.floor(audio.currentTime)
+        let endSec = Math.floor(audio.duration)
+        let endResMin = Math.floor((endSec / 60) - ((second / 60)))
+        let endResSec = (endSec - second) % 60
+
+        ////start/////
+        if (String(Math.floor(second / 60)).length < 2) {
+            startTimeList[0].innerHTML = "0" + Math.floor(second / 60)
+        } else {
+            startTimeList[0].innerHTML = Math.floor(second / 60)
+        }
+
+        if (String(Math.floor(second % 60)).length < 2) {
+            startTimeList[2].innerHTML = "0" + Math.floor(second % 60)
+        } else {
+            startTimeList[2].innerHTML = Math.floor(second % 60)
+        }
+        //////
+        ///////end///////
+        if (isNaN(endResMin)) {
+            endResMin = 0
+        } else {
+            if (String(endResMin).length < 2) {
+                endTimeList[0].innerHTML = "0" + endResMin
+            } else {
+                endTimeList[0].innerHTML = endResMin
+            }
+        }
+
+
+        // if (endResSec == 60) {
+        //     endResSec = 0
+        // }
+        if (isNaN(endResSec)) {
+            endResSec = 0
+
+        } else {
+            if (String(endResSec).length < 2) {
+                endTimeList[2].innerHTML = "0" + endResSec
+            } else {
+                endTimeList[2].innerHTML = endResSec
+            }
+        }
+        console.log(endResSec);
+
+        //////////////
+    }, 1000)
 
 
 
 
-/////////////
-//////////////////////array play function//////
-function playMusicByArray(listNum) {
-    img.src = musicList[listNum].imgUrl
-    audio.src = musicList[listNum].MusicUrl
-    musicName.innerHTML = musicList[listNum].musicName
-    singerName.innerHTML = musicList[listNum].singer
-    beforeBg.style.backgroundImage = `url(${musicList[listNum].imgUrl})`
-    body.style.backgroundColor = musicList[listNum].bgColor
-    audio.play()
-}
+    /////////////
+    //////////////////////array play function//////
+    function playMusicByArray(listNum) {
+        img.src = musicList[listNum].imgUrl
+        audio.src = musicList[listNum].MusicUrl
+        musicName.innerHTML = musicList[listNum].musicName
+        singerName.innerHTML = musicList[listNum].singer
+        beforeBg.style.backgroundImage = `url(${musicList[listNum].imgUrl})`
+        body.style.backgroundColor = musicList[listNum].bgColor
+        audio.play()
+    }
+})
