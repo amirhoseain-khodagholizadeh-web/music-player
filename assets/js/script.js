@@ -15,6 +15,8 @@ const playLineDot = document.querySelector(".play>.line>div>div>span")
 const startTimeList = document.querySelectorAll(".play>.line>.start>span")
 const endTimeList = document.querySelectorAll(".play>.line>.end>span")
 
+
+
 let listNum = 0
 
 
@@ -222,5 +224,6 @@ window.addEventListener("load", () => {
         audio.play()
     }
 })
+
 
 
