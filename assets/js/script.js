@@ -205,7 +205,6 @@ window.addEventListener("load", () => {
                 endTimeList[2].innerHTML = endResSec
             }
         }
-        console.log(endResSec);
 
         //////////////
     }, 1000)
@@ -225,3 +224,4 @@ window.addEventListener("load", () => {
         audio.play()
     }
 })
+
