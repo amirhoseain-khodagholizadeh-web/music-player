@@ -24,14 +24,14 @@ const musicList = [{
         musicName: "Ghoftam Ghame To Daram",
         singer: "Mohammad reza Shajryan",
         MusicUrl: "assets/audio/MohammadReza Shajryan – Ghoftam Ghame To Daram (321).mp3",
-        imgUrl: "assets/img/شجریان.jpg",
+        imgUrl: "assets/img/شجریان-min.jpg",
         bgColor: "rgba(194, 194, 194, 0.99)"
 
     }, {
         musicName: "Moama",
         singer: "Javad Yasari",
         MusicUrl: "assets/audio/javad_yasari_moama\ 128.mp3",
-        imgUrl: "assets/img/yasari.jpg",
+        imgUrl: "assets/img/yasari-min.jpg",
         bgColor: "rgb(51, 54, 85)"
 
     },
@@ -39,7 +39,7 @@ const musicList = [{
         musicName: "Khaleg",
         singer: "Moein",
         MusicUrl: "assets/audio/Moein - Khalegh [320].mp3",
-        imgUrl: "assets/img/معین-خواننده-ایرانی3.jpg",
+        imgUrl: "assets/img/معین-خواننده-ایرانی3-min.jpg",
         bgColor: "rgba(226, 128, 145, 1)"
 
     },
@@ -47,7 +47,7 @@ const musicList = [{
         musicName: "Behet Ghol midam",
         singer: "Mohsen Yeganeh",
         MusicUrl: "assets/audio/Mohsen Yeganeh - Behet Ghol Midam (128) (online-audio-converter.com).mp3",
-        imgUrl: "assets/img/photo_2017-08-30_19-39-52.jpg",
+        imgUrl: "assets/img/photo_2017-08-30_19-39-52-min.jpg",
         bgColor: "rgb(111, 51, 129)"
 
     },
@@ -55,14 +55,14 @@ const musicList = [{
         musicName: "Navak",
         singer: "Mohsen  chavoshi",
         MusicUrl: "assets/audio/Mohsen.Chavoshi - Arouse_Man_ft._Dj_Abed [128] (2).mp3",
-        imgUrl: "assets/img/پلی-لیست-چاووشی-390x390.png",
+        imgUrl: "assets/img/لپلی-لیست-چاووشی-390x390-min.png",
         bgColor: "rgb(221, 140, 59)"
     },
     {
         musicName: "Yeki hast",
         singer: "Morteza Pashaei",
         MusicUrl: "assets/audio/Morteza Pashaei - Gerye Kon (321).mp3",
-        imgUrl: "assets/img/Screenshot-2023-12-02-094024پاشایی.jpg",
+        imgUrl: "assets/img/Screenshot-2023-12-02-094024پاشایی-min.jpg",
         bgColor: "blue"
 
     }
@@ -224,5 +224,6 @@ function playMusicByArray(listNum) {
     ///////////////////////////
     audio.play()
 }
+
 
 
