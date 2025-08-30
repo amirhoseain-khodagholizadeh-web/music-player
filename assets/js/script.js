@@ -219,7 +219,7 @@ function playMusicByArray(listNum) {
     singerName.innerHTML = musicList[listNum].singer
     ////////////////////////////////////////////
     audio.src = musicList[listNum].MusicUrl
-    audio.load()
     ///////////////////////////
     audio.play()
 }
+
