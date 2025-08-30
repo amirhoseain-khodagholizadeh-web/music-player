@@ -2,7 +2,7 @@ const playBtn = document.querySelectorAll(".btn>span>i")[1]
 const previousBtn = document.querySelectorAll(".btn>span>i")[0]
 const nextBtn = document.querySelectorAll(".btn>span>i")[2]
 const img = document.querySelector("img")
-const audio = document.querySelector("audio")
+
 const musicName = document.querySelectorAll("figure>figcaption>p")[0]
 const singerName = document.querySelectorAll("figure>figcaption>p")[1]
 const beforeBg = document.querySelector(".before")
@@ -14,6 +14,8 @@ const playLineDot = document.querySelector(".play>.line>div>div>span")
 
 const startTimeList = document.querySelectorAll(".play>.line>.start>span")
 const endTimeList = document.querySelectorAll(".play>.line>.end>span")
+
+const audio = new Audio()
 
 let listNum = 0
 
@@ -222,4 +224,5 @@ function playMusicByArray(listNum) {
     ///////////////////////////
     audio.play()
 }
+
 
