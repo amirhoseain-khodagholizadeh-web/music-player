@@ -136,7 +136,6 @@ window.addEventListener("load", () => {
         ///////////////////////
 
         playLineFull.style.width = resulrPersent + "%"
-        console.log(resulrPersent + "%");
 
     })
 
@@ -154,7 +153,6 @@ window.addEventListener("load", () => {
             listNum++
             if (listNum > musicList.length - 1) listNum = 0;
             playMusicByArray(listNum)
-            console.log("golog");
 
 
         };
@@ -224,4 +222,5 @@ window.addEventListener("load", () => {
         audio.play()
     }
 })
+
 
